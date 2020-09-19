@@ -13,6 +13,7 @@ public class level_complete : MonoBehaviour
     }
     public void LoadNextLevel()
     {
+        CommandLog.commands.Clear(); //Empty out the log for the new scene
     	SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

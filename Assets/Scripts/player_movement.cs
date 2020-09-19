@@ -10,6 +10,8 @@ public class player_movement : MonoBehaviour
     public float forwardForce = 200f;
     public float sidewaysForce = 500f;
 
+    public bool bIsReplaying = false;
+
     
 
 
@@ -19,7 +21,10 @@ public class player_movement : MonoBehaviour
 
         rb.AddForce(0, -9.8f * Time.deltaTime, 0);
 
-
+        if(bIsReplaying)
+        {
+            return; //Running a replay, ignore active inputs
+        }
 
 
         if (Input.GetKey("d")) //Move Right 
